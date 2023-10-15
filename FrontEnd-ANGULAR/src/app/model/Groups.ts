@@ -1,6 +1,6 @@
 export class Groups {
     id !                :number;
-    groupeName !        :string;
+    groupName !         :string;
     origin !            :string;
     city !              :string;
     date_start!         :number;

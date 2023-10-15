@@ -88,7 +88,7 @@ export class LoginComponent implements OnInit {
         // Désactive l'écran de chargement
         this.ui.deactivateLoading();
         this.errorMessage = '';
-        this.router.navigateByUrl('/articles');
+        this.router.navigateByUrl('/groups');
       },
       error => {
         // Désactive l'écran de chargement

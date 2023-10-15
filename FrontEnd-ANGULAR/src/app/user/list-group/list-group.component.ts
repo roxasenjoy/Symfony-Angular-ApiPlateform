@@ -14,7 +14,8 @@ import {AddGroupComponent} from "../add-group/add-group.component";
 })
 export class ListGroupComponent implements OnInit {
 
-  constructor(public crudApi: GroupService,
+  constructor(
+              public crudApi: GroupService,
               public toastr: ToastrService,
               private router: Router,
               public fb: FormBuilder,
@@ -31,9 +32,11 @@ export class ListGroupComponent implements OnInit {
     this.crudApi.getAll().subscribe(
       response => {
         this.crudApi.list = response["hydra:member"];
+        console.log(this.crudApi.list);
       }
     );
   }
+
   removeData(id:number) {
     if (window.confirm('Etes vous sur de vouloir suppprimer ce groupe ?')) {
       this.crudApi.deleteData(id)
@@ -45,6 +48,7 @@ export class ListGroupComponent implements OnInit {
           error => console.log(error));
     }
   }
+
   selectData(item : Groups) {
     //permet de choisir entre update et add
     this.crudApi.choixmenu = "M";
@@ -58,7 +62,6 @@ export class ListGroupComponent implements OnInit {
 
     this.matDialog.open(AddGroupComponent, dialogConfig);
   }
-
 
   addGroups()
   {

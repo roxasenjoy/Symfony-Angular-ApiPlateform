@@ -4,7 +4,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import {ListGroupComponent} from './user/list-group/list-group.component';
-import {MapToIterable} from './user/list-group/PropertiesPipe';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
@@ -27,8 +26,8 @@ const MATERIAL_MODULES = [MatToolbarModule,
     NavbarComponent,
     ImportComponent,
     ListGroupComponent,
-    AddGroupComponent,
-    MapToIterable],
+    AddGroupComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

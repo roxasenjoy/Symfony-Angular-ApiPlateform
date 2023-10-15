@@ -12,6 +12,7 @@ from '@angular/forms';
 export class GroupService {
 
   private baseUrl = 'http://localhost:8000/api/groups';
+  
   choixmenu : string  = 'A';
   categoryid:any;
   list! : Groups[] ;

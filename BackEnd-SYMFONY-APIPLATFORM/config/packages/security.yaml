@@ -41,7 +41,7 @@ security:
 #        roles: IS_AUTHENTICATED_ANONYMOUSLY,
 #      }
     - { path: ^/api/users, methods: [PUT, DELETE, GET], roles: ROLE_USER }
-    - { path: ^/api/articles, methods: [PUT, DELETE, GET,POST], roles: ROLE_USER }
+    - { path: ^/api/groups, methods: [PUT, DELETE, GET,POST], roles: ROLE_USER }
     - { path: ^/api/login, roles: PUBLIC_ACCESS }
     - { path: ^/api,       roles: PUBLIC_ACCESS }
     # - { path: ^/admin, roles: ROLE_ADMIN }

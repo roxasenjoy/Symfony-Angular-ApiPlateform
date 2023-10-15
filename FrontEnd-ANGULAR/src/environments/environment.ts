@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   AUTH_API: 'http://localhost:8000/api/login_check',
   USERS_API: 'http://localhost:8000/api/users',
-  ARTICLES_API: 'http://localhost:8000/api/articles',
+  GROUPS_API: 'http://localhost:8000/api/groups',
 };
 /*
  * For easier debugging in development mode, you can import the following file

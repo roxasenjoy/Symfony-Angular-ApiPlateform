@@ -1,7 +1,7 @@
 <?php
 namespace App\Controller;
 
-use App\Entity\Category;
+use App\Entity\Group;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
@@ -28,11 +28,21 @@ class ImportController
 
         // À ce stade, $data contient les données du fichier Excel en format JSON + Facile à traiter
         foreach ($data as $row) {
-            $category = new Category();
-            $category->setName($row['Nom du groupe']);
-            $category->setLibelle($row['Ville']);
+            $group = new Group();
 
-            $this->entityManager->persist($category);
+            $group->setGroupName($row['Nom du groupe']);
+            $group->setOrigin($row['Origine']);
+            $group->setCity($row['Ville']);
+            $group->setDateStart($row['Année début']);
+            $group->setDateSeparation($row['Année séparation'] ?? null);
+            $group->setFounders($row['Fondateurs'] ?? null);
+            $group->setMembers($row['Membres'] ?? null);
+            $group->setMusicType($row['Courant musical'] ?? null);
+            $group->setDescription($row['Présentation']);
+
+
+
+            $this->entityManager->persist($group);
         }
 
         $this->entityManager->flush();

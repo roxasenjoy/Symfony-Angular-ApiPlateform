@@ -47,7 +47,7 @@ export class AddGroupComponent implements OnInit {
   InfoForm() {
     this.crudApi.formData = this.fb.group({
       id: null,
-      groupeName      : ['', [Validators.required]],
+      groupName      : ['', [Validators.required]],
       origin          : ['', [Validators.required]],
       city            : ['', [Validators.required]],
       date_start      : ['', [Validators.required]],
@@ -69,7 +69,7 @@ export class AddGroupComponent implements OnInit {
 
   lister()
   {
-    this.router.navigate(['/users']);
+    this.router.navigate(['/groups']);
   }
 
  addData() {
