@@ -1,0 +1,49 @@
+<div>
+
+    <div>
+      <a class="btn btn-outline-success" (click)="addGroups()">
+        <i class="fa fa-plus-square"></i> Ajouter un groupe
+      </a>
+    
+      <app-import></app-import>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-responsive-sm table-responsive-md table-responsive-lg">
+            <thead>
+                <tr>
+                    <th class="text-center"  scope="col">Nom du groupe</th>
+                    <th class="text-center" scope="col">Origine </th>
+                    <th class="text-center" scope="col">Année de début</th>
+                    <th class="text-center" scope="col">Année de séparation</th>
+                    <th class="text-center" scope="col">Fondateurs</th>
+                    <th class="text-center" scope="col">Membres</th>
+                    <th class="text-center" scope="col">Courant musicaux</th>
+                    <th class="text-center" scope="col">Présentation</th>
+                </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of crudApi.list| mapToIterable   ;let i=index; ">
+                <td class="text-center">{{item.value.groupeName}}</td>
+                <td class="text-center">{{item.value.origin}}</td>
+                <td class="text-center">{{item.value.city}}</td>
+                <td class="text-center">{{item.value.date_start}}</td>
+                <td class="text-center">{{item.value.date_separation}}</td>
+                <td class="text-center">{{item.value.founders}}</td>
+                <td class="text-center">{{item.value.members}}</td>
+                <td class="text-center">{{item.value.musicType}}</td>
+                <td class="text-center">{{item.value.description}}</td>
+
+                <td class="text-center"><button class="btn btn-warning" (click)="selectData(item.value)">
+                  <i class="fa fa-pencil-square-o">Modifier</i></button>
+                </td>
+                <td class="text-center">
+                  <button class="btn btn-danger" (click)="removeData(item.value.id)">
+                  <i class="fa fa-trash-o">Supprimer</i></button>
+                </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
