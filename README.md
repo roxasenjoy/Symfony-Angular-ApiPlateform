@@ -20,7 +20,7 @@ http://localhost:8000/api
 + php bin/console lexik:jwt:generate-keypair
   
 + une fois les cles regénérées recuperer le token sur postman ou autres
-avec http://localhost:8000/api/login_check et http://localhost:8000/api/articles avec autorisation bearer et le token qu'on a reçu précédemment
+avec http://localhost:8000/api/login_check et http://localhost:8000/api/groups avec autorisation bearer et le token qu'on a reçu précédemment
 
 ### partie angular
 <ol>
