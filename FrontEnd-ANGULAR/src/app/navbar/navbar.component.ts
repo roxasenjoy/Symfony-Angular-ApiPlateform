@@ -17,6 +17,8 @@ export class NavbarComponent implements OnInit {
     this.isAuthenticated = this.auth.isAuthenticated();
     if (this.isAuthenticated) {
       this.userData = this.auth.getUserData();
+    } else {
+      this.router.navigateByUrl('/login');
     }
 
     this.auth.authState.subscribe(state => {

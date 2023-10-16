@@ -1,0 +1,58 @@
+<h1>Liste des utilisateurs</h1>
+<hr>
+
+<form [formGroup]="this.crudApi.formData" (ngSubmit)="onSubmit()">
+
+  <input type="hidden" formControlName="id" id="id">
+
+  <div class="form-group">
+    <label>Nom du groupe </label>
+    <input type="text" class="form-control" formControlName="groupName" id="groupName">
+  </div>
+
+  <div class="form-group">
+    <label>Origine</label>
+    <input type="text" class="form-control" formControlName="origin" id="origin" placeholder="Origine">
+  </div>
+
+  <div class="form-group">
+    <label>Ville</label>
+    <input type="text" class="form-control" formControlName="city" id="city" placeholder="Ville">
+  </div>
+
+  <div class="form-group">
+    <label>Année début</label>
+    <input type="number" class="form-control" formControlName="date_start" id="date_start" placeholder="Année début">
+  </div>
+
+  <div class="form-group">
+    <label>Année séparation</label>
+    <input type="number" class="form-control" formControlName="date_separation" id="date_separation" placeholder="Année séparation">
+  </div>
+
+  <div class="form-group">
+    <label>Fondateurs</label>
+    <input type="text" class="form-control" formControlName="founders" id="founders" placeholder="Fondateurs">
+  </div>
+
+  <div class="form-group">
+    <label>Membres</label>
+    <input type="number" class="form-control" formControlName="members" id="members" placeholder="Membres">
+  </div>
+
+  <div class="form-group">
+    <label>Courant musicaux</label>
+    <input type="text" class="form-control" formControlName="musicType" id="musicType" placeholder="Courant musicaux">
+  </div>
+
+  <div class="form-group">
+    <label>Présentation</label>
+    <input type="text" class="form-control" formControlName="description" id="description" placeholder="Présentation">
+  </div>
+  
+  <div class="form-group">
+    <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i> Ajouter </button>
+    <button type="button" class="btn btn-outline-dark ml-1" [mat-dialog-close]><i class="fa fa-close"></i> Fermer
+    </button>
+  </div>
+</form>

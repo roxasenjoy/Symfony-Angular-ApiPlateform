@@ -1,0 +1,58 @@
+<div>
+
+    <div class="mb-1 container-group" style="display:flex; justify-content:space-between; width:100%;">
+      
+    
+      <app-import></app-import>
+
+      <a class="btn btn-outline-success" (click)="addGroups()">
+        <i class="fa fa-plus-square"></i> Ajouter un groupe
+      </a>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-responsive-sm table-responsive-md table-responsive-lg">
+            <thead>
+                <tr>
+                    <th class="text-center"  scope="col">N°</th>
+                    <th class="text-center"  scope="col">Nom du groupe</th>
+                    <th class="text-center" scope="col">Origine </th>
+                    <th class="text-center" scope="col">Ville </th>
+                    <th class="text-center" scope="col">Année de début</th>
+                    <th class="text-center" scope="col">Année de séparation</th>
+                    <th class="text-center" scope="col">Fondateurs</th>
+                    <th class="text-center" scope="col">Membres</th>
+                    <th class="text-center" scope="col">Courant musicaux</th>
+                    <th class="text-center" scope="col">Présentation</th>
+                    <th class="text-center" scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of crudApi.list; let i=index; ">
+                <td class="text-center">N°{{i}}</td>
+                <td class="text-center">{{item.groupName}}</td>
+                <td class="text-center">{{item.origin}}</td>
+                <td class="text-center">{{item.city}}</td>
+                <td class="text-center">{{item.date_start}}</td>
+                <td class="text-center">{{item.date_separation}}</td>
+                <td class="text-center">{{item.founders}}</td>
+                <td class="text-center">{{item.members}}</td>
+                <td class="text-center">{{item.musicType}}</td>
+                <td class="text-center">{{item.description}}</td>
+
+                <td>
+                  <div class="text-center"><button class="btn btn-warning" (click)="selectData(item)">
+                    <i class="fa fa-pencil-square-o">Modifier</i></button>
+                  </div>
+                  <div class="text-center">
+                    <button class="btn btn-danger" (click)="removeData(item.id)">
+                    <i class="fa fa-trash-o">Supprimer</i></button>
+                  </div>
+                </td>
+                
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+

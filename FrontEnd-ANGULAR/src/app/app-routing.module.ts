@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthModule } from './auth/auth.module';
-import { ListGroupComponent } from './user/list-group/list-group.component';
+import { ListGroupComponent } from './group/list-group/list-group.component';
 import { Error404Component } from './error404/error404.component';
 import {AuthGuard} from './auth/auth.guard';
 
